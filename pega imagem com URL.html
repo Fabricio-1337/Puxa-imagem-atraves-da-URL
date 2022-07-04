@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Título da página</title>
+    <meta charset="utf-8">
+  </head>
+  <body id="Corpo">
+    
+    <label> Endereço da imagem </label>
+    <br>
+    <input type = "text" id = "txtendereco"></br>
+    
+    <label> Nome </label>
+    <br>
+    <input type = "text" id = "txtnome"></br>
+    
+    <label> Telefone </label>
+    <br>
+    <input type = "number" id = "numerotelefone"></br>
+    
+    <button type = "button" onclick = "chamarDados()"> Inserir </button>
+
+    </body>
+  <script>
+    let chamarDados = function () {
+      let endereço = document.querySelector ('#txtendereco').value;
+      let nome = document.querySelector('#txtnome').value;
+      let number = document.querySelector ('#numerotelefone').value;
+
+      let corpo = document.querySelector('#Corpo');
+      let div = document.createElement ('div');
+      corpo.appendChild(div);
+
+      let imagem = document.createElement ('img');
+      imagem.setAttribute ('src',endereço);
+      imagem.setAttribute ('width', '250px');
+      imagem.setAttribute ('heigth','250px');
+      div.appendChild(imagem);
+
+      let paragrafo = document.createElement('p');
+      paragrafo.textContent = "Nome: " +nome;
+      div.appendChild(paragrafo);
+      let paragrafo2 = document.createElement('p');
+      paragrafo2.textContent = "Telefone: " +number;
+      div.appendChild(paragrafo2);
+    }
+  </script>
+
+</html>
